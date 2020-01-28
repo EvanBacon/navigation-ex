@@ -94,11 +94,23 @@ type Props = {
   gestureHandlerProps?: React.ComponentProps<typeof PanGestureHandler>;
 };
 
+/**
+ * Disables the pan gesture by default on Apple devices in the browser.
+ */
+function shouldEnableGesture(): boolean {
+  if (Platform.OS === 'web' && navigator) {
+    const isWebAppleDevice =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    return !isWebAppleDevice;
+  }
+  return true;
+}
+
 export default class DrawerView extends React.PureComponent<Props> {
   static defaultProps = {
     drawerPostion: I18nManager.isRTL ? 'left' : 'right',
     drawerType: 'front',
-    gestureEnabled: true,
+    gestureEnabled: shouldEnableGesture(),
     swipeEdgeWidth: 32,
     swipeVelocityThreshold: 500,
     keyboardDismissMode: 'on-drag',
