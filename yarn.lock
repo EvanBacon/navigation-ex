@@ -1025,6 +1025,13 @@
   dependencies:
     find-up "^4.0.0"
 
+"@egjs/hammerjs@^2.0.17":
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
+  integrity sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==
+  dependencies:
+    "@types/hammerjs" "^2.0.36"
+
 "@evocateur/libnpmaccess@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@evocateur/libnpmaccess/-/libnpmaccess-3.1.2.tgz#ecf7f6ce6b004e9f942b098d92200be4a4b1c845"
@@ -2975,6 +2982,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/hammerjs@^2.0.36":
+  version "2.0.36"
+  resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.36.tgz#17ce0a235e9ffbcdcdf5095646b374c2bf615a4c"
+  integrity sha512-7TUK/k2/QGpEAv/BCwSHlYu3NXZhQ9ZwBYpzr9tjlPIL2C5BeGhH3DmVavRx3ZNyELX5TLC91JTz/cen6AAtIQ==
+
 "@types/hapi__joi@*":
   version "16.0.6"
   resolved "https://registry.yarnpkg.com/@types/hapi__joi/-/hapi__joi-16.0.6.tgz#aa8f7dff93fdd3db6506ca2433a8302d8819fad1"
@@ -3087,6 +3099,11 @@
   integrity sha512-dMLFD2cCsxtDgMkTydQCM0PxDq8vwc6uN5M/jRktDfYvH3nQj6pjC9OrCXS2lKlYoYTNJorI/dI8x9dpLshexQ==
   dependencies:
     "@types/react" "*"
+
+"@types/react-native-restart@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native-restart/-/react-native-restart-0.0.0.tgz#5c86bd8d3acb9dc8c8e41963cc038b8ac76d3271"
+  integrity sha512-MLawyWpEkVlzxAZkdWDYabpL4zPRo7oBd1gE683WEr/7szwh+WVIjReSsLdFeRiiFoNuEEjAthnGx2YLFzwHEQ==
 
 "@types/react-native-vector-icons@^6.4.5":
   version "6.4.5"
@@ -8410,10 +8427,11 @@ gzip-size@5.1.1, gzip-size@^5.0.0:
     duplexer "^0.1.1"
     pify "^4.0.1"
 
-hammerjs@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
-  integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
+"hammerjs@https://github.com/naver/hammer.js.git":
+  version "2.0.17-snapshot"
+  resolved "https://github.com/naver/hammer.js.git#54bc698b25edd6e1b76ca975ebaced5ce0467d51"
+  dependencies:
+    "@types/hammerjs" "^2.0.36"
 
 handle-thing@^2.0.0:
   version "2.0.0"
@@ -13547,12 +13565,13 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-i
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-native-gesture-handler@^1.5.3, react-native-gesture-handler@~1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.5.3.tgz#191b44701fab7ba54c27a2438cb5eaa252666e66"
-  integrity sha512-y2/jw0uHAQtEPR02PHAah6tdMymrVtZFoHqjlEWdhK807w2sgU5CySYINK/nOTczd+zB4GMX+9euA3VfbGJ5aA==
+react-native-gesture-handler@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.5.5.tgz#513d6d65c4e24efd6d69be0006c7cd3bc9045358"
+  integrity sha512-viypCSRpo064BdpkVL2FnPLZiEK3piJ1WZxydFXgeZj+avJxd6VnTFoh9+IDFk2M0Eadoy6D1ZV1TqBMGHtqGg==
   dependencies:
-    hammerjs "^2.0.8"
+    "@egjs/hammerjs" "^2.0.17"
+    hammerjs "https://github.com/naver/hammer.js.git"
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
@@ -13576,6 +13595,11 @@ react-native-reanimated@^1.4.0:
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
   integrity sha512-tO7nSNNP+iRLVbkcSS5GXyDBb7tSI02+XuRL3/S39EAr35rnvUy2JfeLUQG+fWSObJjnMVhasUDEUwlENk8IXw==
 
+react-native-restart@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/react-native-restart/-/react-native-restart-0.0.13.tgz#88003fd6b1cce9de5bafa2570ba4ef8ff1ea2937"
+  integrity sha512-p4rBiTliPiJEejA0IhExHuM7Ge6TuLpUAm98TbtkmiISWDRK2a/DeZ4Wno7bawcMr1Yb6O5eeTHPO0rUltRD/A==
+
 react-native-safe-area-context@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.6.2.tgz#d467ac8a953426bfbb6d8f417222b0dc3952be7a"
@@ -13588,17 +13612,17 @@ react-native-safe-area-view@^0.14.6:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-react-native-screens@^2.0.0-alpha.31:
-  version "2.0.0-alpha.31"
-  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.0.0-alpha.31.tgz#399f9fbd882730b4df72e102ce5563109009eb3f"
-  integrity sha512-eHYjWBnKSSMtxxzT9o/RYxNL80wWIuXWSGbbb2uxjvpbZdQByq2tl84m+wXFyTz1rbJqqIHrcqWD/hEW58CQsg==
+react-native-screens@^2.0.0-alpha.33:
+  version "2.0.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.0.0-alpha.33.tgz#66ecda655958f4939ddf31eb84c4cf0af0ae8e3e"
+  integrity sha512-JVnrAnhWDm7+CviqOeFUtRt8eExYdvoX/y4NEhn/yLhwlSQuJiNStgg8R0j4t2XKifJ5CBNxEGpkEw12fIYYxg==
   dependencies:
     debounce "^1.2.0"
 
-react-native-tab-view@2.11.0, react-native-tab-view@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.11.0.tgz#2e57d1f617ccc88c7f452708804f3409f880b700"
-  integrity sha512-vqetlxGO7A8bnqvXcB50MWpRZAImXFrDGz1WCQKdCqe03Ey3ZzENe7yLuWrtBJYlepGfOLAsmCXv+wW82Yfm1w==
+react-native-tab-view@2.13.0, react-native-tab-view@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.13.0.tgz#23037aa43b0f8f682ddc20415a4baaaf6f82ae8f"
+  integrity sha512-AeYbp/u91+D/C9+PmVEPBmFb3ixv8IkLMC3Sc5MajJ/fg0Zl3Of+BcEknBvTnKoe7Fj2y8+Qf9zorBbh5xzh4A==
 
 react-native-testing-library@^1.12.0:
   version "1.12.0"

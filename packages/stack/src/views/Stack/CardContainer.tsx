@@ -1,6 +1,12 @@
 import * as React from 'react';
-import { Animated, View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
-import { StackNavigationState } from '@react-navigation/routers';
+import {
+  Animated,
+  View,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+  Platform,
+} from 'react-native';
 import { Route, useTheme } from '@react-navigation/native';
 import { Props as HeaderContainerProps } from '../Header/HeaderContainer';
 import Card from './Card';
@@ -16,7 +22,6 @@ type Props = TransitionPreset & {
   gesture: Animated.Value;
   previousScene?: Scene<Route<string>>;
   scene: Scene<Route<string>>;
-  state: StackNavigationState;
   safeAreaInsetTop: number;
   safeAreaInsetRight: number;
   safeAreaInsetBottom: number;
@@ -27,6 +32,7 @@ type Props = TransitionPreset & {
   getPreviousRoute: (props: {
     route: Route<string>;
   }) => Route<string> | undefined;
+  getFocusedRoute: () => Route<string>;
   renderHeader: (props: HeaderContainerProps) => React.ReactNode;
   renderScene: (props: { route: Route<string> }) => React.ReactNode;
   onOpenRoute: (props: { route: Route<string> }) => void;
@@ -55,7 +61,7 @@ type Props = TransitionPreset & {
   }) => void;
 };
 
-const EPSILON = 0.01;
+const EPSILON = 0.1;
 
 function CardContainer({
   active,
@@ -71,6 +77,7 @@ function CardContainer({
   gestureResponseDistance,
   gestureVelocityImpact,
   getPreviousRoute,
+  getFocusedRoute,
   headerMode,
   headerShown,
   headerStyleInterpolator,
@@ -94,7 +101,6 @@ function CardContainer({
   safeAreaInsetRight,
   safeAreaInsetTop,
   scene,
-  state,
   transitionSpec,
 }: Props) {
   React.useEffect(() => {
@@ -135,6 +141,9 @@ function CardContainer({
   );
 
   React.useEffect(() => {
+    if (Platform.OS === 'web') {
+      return;
+    }
     const valueListenerCallback = ({ value }: { value: number }) => {
       setPointerEvents(value <= EPSILON ? 'box-none' : 'none');
     };
@@ -193,8 +202,8 @@ function CardContainer({
               layout,
               insets,
               scenes: [previousScene, scene],
-              state,
               getPreviousRoute,
+              getFocusedRoute,
               gestureDirection,
               styleInterpolator: headerStyleInterpolator,
               onContentHeightChange: onHeaderHeightChange,

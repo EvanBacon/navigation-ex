@@ -11,7 +11,7 @@
     "material",
     "tab"
   ],
-  "version": "5.0.0-alpha.35",
+  "version": "5.0.0-alpha.39",
   "license": "MIT",
   "repository": "https://github.com/react-navigation/navigation-ex/tree/master/packages/material-top-tabs",
   "main": "lib/commonjs/index.js",
@@ -31,7 +31,7 @@
     "clean": "del lib"
   },
   "dependencies": {
-    "@react-navigation/routers": "^5.0.0-alpha.27",
+    "@react-navigation/routers": "^5.0.0-alpha.31",
     "color": "^3.1.2"
   },
   "devDependencies": {
@@ -41,9 +41,9 @@
     "del-cli": "^3.0.0",
     "react": "~16.9.0",
     "react-native": "~0.61.5",
-    "react-native-gesture-handler": "^1.5.3",
+    "react-native-gesture-handler": "^1.5.5",
     "react-native-reanimated": "^1.4.0",
-    "react-native-tab-view": "^2.11.0",
+    "react-native-tab-view": "^2.13.0",
     "typescript": "^3.7.4"
   },
   "peerDependencies": {
@@ -52,7 +52,7 @@
     "react-native": "*",
     "react-native-gesture-handler": "^1.0.0",
     "react-native-reanimated": "^1.0.0",
-    "react-native-tab-view": "^2.11.0"
+    "react-native-tab-view": "^2.13.0"
   },
   "@react-native-community/bob": {
     "source": "src",
