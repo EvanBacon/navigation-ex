@@ -96,6 +96,7 @@ type Props = {
 
 /**
  * Disables the pan gesture by default on Apple devices in the browser.
+ * https://stackoverflow.com/a/9039885
  */
 function shouldEnableGesture(): boolean {
   if (Platform.OS === 'web' && navigator) {
